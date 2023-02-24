@@ -34,6 +34,16 @@
       "name": "Geladeira",
       "price": "1800,00",
       "id": 7
+    },
+    {
+      "name": "Notebook ",
+      "price": "3000,00",
+      "id": 8
+    },
+    {
+      "name": "Notebook Assus",
+      "price": "3000",
+      "id": 9
     }
   ]
 }
