@@ -1,44 +1,40 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar'
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Product } from '../products/product-create/product.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-
   bsaeUrl = 'http://localhost:3001/products';
 
-  constructor(
-    private snackBar: MatSnackBar,
-    private http: HttpClient
-  ) { }
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,
       horizontalPosition: 'right',
-      verticalPosition: 'top'
-    })
+      verticalPosition: 'top',
+    });
   }
 
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.bsaeUrl, product)
+    return this.http.post<Product>(this.bsaeUrl, product);
   }
 
   read(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.bsaeUrl)
+    return this.http.get<Product[]>(this.bsaeUrl);
   }
 
   readById(id: string): Observable<Product> {
-    const url = `${this.bsaeUrl}/${id}`
-    return this.http.get<Product>(url)
+    const url = `${this.bsaeUrl}/${id}`;
+    return this.http.get<Product>(url);
   }
 
   update(product: Product): Observable<Product> {
-    const url = `${this.bsaeUrl}/${product.id}`
-    return this.http.put<Product>(url, product)
+    const url = `${this.bsaeUrl}/${product.id}`;
+    return this.http.put<Product>(url, product);
   }
 }

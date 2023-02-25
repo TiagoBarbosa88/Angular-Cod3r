@@ -8,13 +8,12 @@ import { ProductUpdateComponent } from './components/products/product-update/pro
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductCrudComponent },
-  { path: 'products/create', component: ProductCreateComponent},
-  { path: 'products/update/:id', component: ProductUpdateComponent},
-
+  { path: 'products/create', component: ProductCreateComponent },
+  { path: 'products/update/:id', component: ProductUpdateComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

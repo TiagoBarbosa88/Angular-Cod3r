@@ -20,10 +20,10 @@ import { ProductCrudComponent } from './views/product-crud/product-crud.componen
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 import { ProductCreateComponent } from './components/products/product-create/product-create.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
-import { FormsModule } from '@angular/forms'
-import { MatFormFieldModule } from '@angular/material/form-field'
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductReadComponent } from './components/products/product-read/product-read.component';
 import { ProductRead2Component } from './components/products/product-read2/product-read2.component';
@@ -35,9 +35,7 @@ import localePT from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ProductUpdateComponent } from './components/products/product-update/product-update.component';
 
-
 registerLocaleData(localePT);
-
 
 @NgModule({
   declarations: [
@@ -53,7 +51,7 @@ registerLocaleData(localePT);
     ProductCrudComponent,
     ProductReadComponent,
     ProductRead2Component,
-    ProductUpdateComponent
+    ProductUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,13 +69,14 @@ registerLocaleData(localePT);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
   ],
-  providers: [{
-    provide: LOCALE_ID,
-    useValue: 'pt-BR'
-  }
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR',
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
