@@ -10,7 +10,10 @@ import { Product } from '../products/product-create/product.model';
 export class ProductService {
   bsaeUrl = 'http://localhost:3001/products';
 
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
+  constructor(
+    private snackBar: MatSnackBar,
+    private http: HttpClient
+    ) { }
 
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
