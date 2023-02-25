@@ -10,7 +10,7 @@ import { Product } from '../products/product-create/product.model';
 export class ProductService {
   bsaeUrl = 'http://localhost:3001/products';
 
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
@@ -36,5 +36,10 @@ export class ProductService {
   update(product: Product): Observable<Product> {
     const url = `${this.bsaeUrl}/${product.id}`;
     return this.http.put<Product>(url, product);
+  }
+
+  delete(id: string): Observable<Product> {
+    const url = `${this.bsaeUrl}/${id}`;
+    return this.http.delete<Product>(url);
   }
 }
